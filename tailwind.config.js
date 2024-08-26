@@ -9,6 +9,7 @@ export default {
         shojumaru: ["Shojumaru", "system-ui", "sans-serif"],
         notoSansJp: ["Noto Sans JP", "sans-serif"],
       },
+      translate: ["active"],
     },
   },
   plugins: [],

@@ -11,7 +11,7 @@ function AppStartpage() {
         <h1 className="font-righteous text-4xl text-sky-200 uppercase">
           Welcome to ReApp Translator
         </h1>
-        <button className="w-40 h-10 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] rounded-full font-righteous font-bold text-base uppercase text-gray-800 tracking-widest">
+        <button className="w-40 h-10 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] rounded-full font-righteous font-bold text-base uppercase text-gray-800 tracking-widest active:translate-y-[1px]">
           Get Started
         </button>
       </div>
