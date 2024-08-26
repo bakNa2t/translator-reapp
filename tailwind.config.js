@@ -2,7 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        russoOne: ["Russo One", "sans-serif"],
+        righteous: ["Righteous", "sans-serif"],
+        shojumaru: ["Shojumaru", "system-ui", "sans-serif"],
+        notoSansJp: ["Noto Sans JP", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
