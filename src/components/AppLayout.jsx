@@ -43,7 +43,7 @@ function AppLayout({ onClose }) {
       </div>
 
       {isDisplayLang && (
-        <div className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#7dd3fc] to-[#065f46] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll">
+        <div className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#7dd3fc] to-[#065f46] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide">
           <ul>
             {Object.entries(lang).map(([langCode, langName]) => (
               <li
