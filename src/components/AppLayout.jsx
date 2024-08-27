@@ -28,6 +28,11 @@ function AppLayout({ onClose }) {
     setIsDisplayLang(false);
   }
 
+  function handleSwapLang() {
+    setSelectedLangFrom(selectedLangTo);
+    setSelectedLangTo(selectedLangFrom);
+  }
+
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
       {/* button to close the app */}
@@ -43,7 +48,13 @@ function AppLayout({ onClose }) {
         <div className="lang" onClick={() => handleLangClick("from")}>
           From {lang[selectedLangFrom] || "English"}
         </div>
-        <i className="fa-solid fa-arrows-rotate text-2xl mx-8 cursor-pointer"></i>
+
+        {/* button to swap languages */}
+        <i
+          className="fa-solid fa-arrows-rotate text-2xl mx-8 cursor-pointer"
+          onClick={handleSwapLang}
+        ></i>
+
         <div className="lang" onClick={() => handleLangClick("to")}>
           To {lang[selectedLangTo] || "English"}
         </div>
