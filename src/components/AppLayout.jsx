@@ -18,8 +18,15 @@ function AppLayout({ onClose }) {
     setIsDisplayLang(true);
   }
 
-  console.log(selectedLangFrom, selectedLangTo, currentLangSelection);
-  console.log(setSelectedLangFrom, setSelectedLangTo);
+  function handleLangSelection(langCode) {
+    if (currentLangSelection === "from") {
+      setSelectedLangFrom(langCode);
+    } else {
+      setSelectedLangTo(langCode);
+    }
+
+    setIsDisplayLang(false);
+  }
 
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
@@ -34,11 +41,11 @@ function AppLayout({ onClose }) {
       {/*header of the app to show selected languages  */}
       <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] text-slate-700 rounded-lg">
         <div className="lang" onClick={() => handleLangClick("from")}>
-          From English
+          From {lang[selectedLangFrom] || "English"}
         </div>
         <i className="fa-solid fa-arrows-rotate text-2xl mx-8 cursor-pointer"></i>
         <div className="lang" onClick={() => handleLangClick("to")}>
-          To Norge
+          To {lang[selectedLangTo] || "English"}
         </div>
       </div>
 
@@ -49,6 +56,7 @@ function AppLayout({ onClose }) {
               <li
                 className="cursor-pointer hover:bg-emerald-600 transition duration-200 p-2 rounded"
                 key={langCode}
+                onClick={() => handleLangSelection(langCode)}
               >
                 {langName}
               </li>
