@@ -9,15 +9,15 @@ function AppLayout() {
         <i className="fa-solid fa-arrows-rotate text-2xl mx-8 cursor-pointer"></i>
         <div className="lang">To Norge</div>
       </div>
-      <div>
-        <textarea name="" id=""></textarea>
-        <div>0 / 200</div>
+      <div className="w-full relative">
+        <textarea name="" id="" className="textarea"></textarea>
+        <div className="absolute bottom-2 right-2 text-slate-700">0 / 200</div>
       </div>
       <button>
-        <i className="fa-solid fa-chevron-down"></i>
+        <i className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"></i>
       </button>
-      <div>
-        <textarea name="" id=""></textarea>
+      <div className="w-full">
+        <textarea name="" id="" className="textarea"></textarea>
       </div>
     </div>
   );

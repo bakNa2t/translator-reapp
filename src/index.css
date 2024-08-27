@@ -15,3 +15,7 @@
 .lang {
   @apply text-lg text-right uppercase cursor-pointer;
 }
+
+.textarea {
+  @apply w-full h-48 resize-none bg-[#c7d2fe] shadow-md shadow-black rounded-lg px-4 py-2 font-righteous font-light leading-5;
+}
