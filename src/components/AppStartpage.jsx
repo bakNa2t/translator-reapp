@@ -7,7 +7,7 @@ function AppStartpage() {
         <span className="font-notoSansJp text-4xl text-right">こんにちは</span>
         <span className="text-2xl text-right">Hola</span>
       </div>
-      <div className="w-full text-right space-y-5 mt-20 mb-36">
+      <div className="w-full text-right space-y-5 my-20">
         <h1 className="font-righteous text-4xl text-sky-200 uppercase">
           Welcome to ReApp Translator
         </h1>
