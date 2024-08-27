@@ -1,9 +1,22 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
+
+import { lang } from "../data/langData";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
     onClose: PropTypes.func,
   };
+
+  const [selectedLangFrom, setSelectedLangFrom] = useState("en");
+  const [selectedLangTo, setSelectedLangTo] = useState("en");
+  const [isDisplayLang, setIsDisplayLang] = useState(false);
+  const [currentLangSelection, setCurrentLangSelection] = useState(null);
+
+  function handleLangClick(type) {
+    setCurrentLangSelection(type);
+    isDisplayLang(true);
+  }
 
   return (
     <div className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
