@@ -18,13 +18,8 @@ function AppLayout({ onClose }) {
     setIsDisplayLang(true);
   }
 
-  console.log(lang, selectedLangFrom, selectedLangTo, currentLangSelection);
-  console.log(
-    setSelectedLangFrom,
-    setIsDisplayLang,
-    setCurrentLangSelection,
-    setSelectedLangTo
-  );
+  console.log(selectedLangFrom, selectedLangTo, currentLangSelection);
+  console.log(setSelectedLangFrom, setSelectedLangTo);
 
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
@@ -48,7 +43,18 @@ function AppLayout({ onClose }) {
       </div>
 
       {isDisplayLang && (
-        <div className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#7dd3fc] to-[#065f46] absolute top-32 left-8 z-10 rounded shadow-lg p-4"></div>
+        <div className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#7dd3fc] to-[#065f46] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll">
+          <ul>
+            {Object.entries(lang).map(([langCode, langName]) => (
+              <li
+                className="cursor-pointer hover:bg-emerald-600 transition duration-200 p-2 rounded"
+                key={langCode}
+              >
+                {langName}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       {/* textarea for translation and counter  */}
