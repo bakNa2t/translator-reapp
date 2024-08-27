@@ -15,33 +15,58 @@ function AppLayout({ onClose }) {
 
   function handleLangClick(type) {
     setCurrentLangSelection(type);
-    isDisplayLang(true);
+    setIsDisplayLang(true);
   }
 
+  console.log(lang, selectedLangFrom, selectedLangTo, currentLangSelection);
+  console.log(
+    setSelectedLangFrom,
+    setIsDisplayLang,
+    setCurrentLangSelection,
+    setSelectedLangTo
+  );
+
   return (
-    <div className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
+    <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
+      {/* button to close the app */}
       <button
         className="absolute top-2 right-4 text-xl text-gray-300"
         onClick={onClose}
       >
         <i className="fa-solid fa-xmark"></i>
       </button>
+
+      {/*header of the app to show selected languages  */}
       <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] text-slate-700 rounded-lg">
-        <div className="lang">From English</div>
+        <div className="lang" onClick={() => handleLangClick("from")}>
+          From English
+        </div>
         <i className="fa-solid fa-arrows-rotate text-2xl mx-8 cursor-pointer"></i>
-        <div className="lang">To Norge</div>
+        <div className="lang" onClick={() => handleLangClick("to")}>
+          To Norge
+        </div>
       </div>
+
+      {isDisplayLang && (
+        <div className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#7dd3fc] to-[#065f46] absolute top-32 left-8 z-10 rounded shadow-lg p-4"></div>
+      )}
+
+      {/* textarea for translation and counter  */}
       <div className="w-full relative">
         <textarea name="" id="" className="textarea"></textarea>
         <div className="absolute bottom-2 right-2 text-slate-700">0 / 200</div>
       </div>
+
+      {/* button to exucte translation */}
       <button>
         <i className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"></i>
       </button>
+
+      {/* textarea for result of translation */}
       <div className="w-full">
         <textarea name="" id="" className="textarea"></textarea>
       </div>
-    </div>
+    </main>
   );
 }
 
