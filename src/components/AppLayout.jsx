@@ -92,7 +92,7 @@ function AppLayout({ onClose }) {
   );
 
   return (
-    <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
+    <main className="w-full flex flex-col gap-y-4 justify-center items-center px-6 sm:px-8 pt-12 pb-12 relative">
       {/* button to close the app */}
       <button
         className="absolute top-2 right-4 text-xl text-gray-300"
@@ -104,7 +104,7 @@ function AppLayout({ onClose }) {
       {/*header of the app to show selected languages  */}
       <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] text-slate-800 rounded-lg">
         <div className="lang" onClick={() => handleLangClick("from")}>
-          <span className="opacity-50 text-sm">From</span>{" "}
+          <span className="opacity-50 text-[8px] sm:text-sm">From</span>{" "}
           {lang[selectedLangFrom] || "English"}
         </div>
 
@@ -115,7 +115,7 @@ function AppLayout({ onClose }) {
         ></i>
 
         <div className="lang" onClick={() => handleLangClick("to")}>
-          <span className="opacity-50 text-sm">To</span>{" "}
+          <span className="opacity-50 text-[8px] sm:text-sm">To</span>{" "}
           {lang[selectedLangTo] || "English"}
         </div>
       </div>
