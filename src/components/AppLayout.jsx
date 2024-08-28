@@ -46,13 +46,18 @@ function AppLayout({ onClose }) {
         )}&langpair=${selectedLangFrom}|${selectedLangTo}`
       );
 
-      const data = res.json();
+      const data = await res.json();
+
+      console.log(data);
 
       setTranslatedText(data.responseData.translatedText);
     }
   }
 
-  console.log(setInputText, translatedText);
+  function handleUpdateInput(e) {
+    const value = e.target.value;
+    setInputText(value);
+  }
 
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
@@ -101,7 +106,11 @@ function AppLayout({ onClose }) {
 
       {/* textarea for translation and counter  */}
       <div className="w-full relative">
-        <textarea name="" id="" className="textarea"></textarea>
+        <textarea
+          value={inputText || ""}
+          className="textarea"
+          onChange={handleUpdateInput}
+        ></textarea>
         <div className="absolute bottom-2 right-2 text-slate-700">0 / 200</div>
       </div>
 
@@ -115,7 +124,11 @@ function AppLayout({ onClose }) {
 
       {/* textarea for result of translation */}
       <div className="w-full">
-        <textarea name="" id="" className="textarea"></textarea>
+        <textarea
+          value={translatedText}
+          className="textarea"
+          readOnly
+        ></textarea>
       </div>
     </main>
   );
