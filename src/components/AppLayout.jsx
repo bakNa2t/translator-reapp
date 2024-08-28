@@ -102,7 +102,7 @@ function AppLayout({ onClose }) {
       </button>
 
       {/*header of the app to show selected languages  */}
-      <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] text-slate-800 rounded-lg">
+      <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#30cfd0] to-[#330867] text-zinc-800 rounded-lg">
         <div className="lang" onClick={() => handleLangClick("from")}>
           <span className="opacity-50 text-[8px] sm:text-sm">From</span>{" "}
           {lang[selectedLangFrom] || "English"}
@@ -110,7 +110,7 @@ function AppLayout({ onClose }) {
 
         {/* button to swap languages */}
         <i
-          className="fa-solid fa-arrows-rotate text-2xl mx-8 cursor-pointer"
+          className="fa-solid fa-arrows-rotate text-2xl mx-8 cursor-pointer hover:animate-spin"
           onClick={handleSwapLang}
         ></i>
 
@@ -122,13 +122,13 @@ function AppLayout({ onClose }) {
 
       {isDisplayLang && (
         <div
-          className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#7dd3fc] to-[#065f46] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide"
+          className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#30cfd0] to-[#330867] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide"
           ref={ref}
         >
           <ul>
             {Object.entries(lang).map(([langCode, langName]) => (
               <li
-                className="cursor-pointer hover:bg-emerald-600 transition duration-200 p-2 rounded"
+                className="cursor-pointer hover:bg-[#a8edea] transition duration-200 p-2 rounded"
                 key={langCode}
                 onClick={() => handleLangSelection(langCode)}
               >
@@ -155,7 +155,7 @@ function AppLayout({ onClose }) {
       {/* button to exucte translation */}
       <button>
         <i
-          className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"
+          className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"
           onClick={handleTranslateText}
         ></i>
       </button>
