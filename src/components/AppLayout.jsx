@@ -44,9 +44,10 @@ function AppLayout({ onClose }) {
       </button>
 
       {/*header of the app to show selected languages  */}
-      <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] text-slate-700 rounded-lg">
+      <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] text-slate-800 rounded-lg">
         <div className="lang" onClick={() => handleLangClick("from")}>
-          From {lang[selectedLangFrom] || "English"}
+          <span className="opacity-50 text-sm">From</span>{" "}
+          {lang[selectedLangFrom] || "English"}
         </div>
 
         {/* button to swap languages */}
@@ -56,7 +57,8 @@ function AppLayout({ onClose }) {
         ></i>
 
         <div className="lang" onClick={() => handleLangClick("to")}>
-          To {lang[selectedLangTo] || "English"}
+          <span className="opacity-50 text-sm">To</span>{" "}
+          {lang[selectedLangTo] || "English"}
         </div>
       </div>
 
