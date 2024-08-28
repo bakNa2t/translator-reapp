@@ -12,6 +12,8 @@ function AppLayout({ onClose }) {
   const [selectedLangTo, setSelectedLangTo] = useState("en");
   const [isDisplayLang, setIsDisplayLang] = useState(false);
   const [currentLangSelection, setCurrentLangSelection] = useState(null);
+  const [inputText, setInputText] = useState("");
+  const [translatedText, setTranslatedText] = useState("");
 
   function handleLangClick(type) {
     setCurrentLangSelection(type);
@@ -32,6 +34,25 @@ function AppLayout({ onClose }) {
     setSelectedLangFrom(selectedLangTo);
     setSelectedLangTo(selectedLangFrom);
   }
+
+  async function handleTranslateText() {
+    if (!inputText.trim()) {
+      setTranslatedText("");
+      return;
+    } else {
+      const res = await fetch(
+        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
+          inputText
+        )}&langpair=${selectedLangFrom}|${selectedLangTo}`
+      );
+
+      const data = res.json();
+
+      setTranslatedText(data.responseData.translatedText);
+    }
+  }
+
+  console.log(setInputText, translatedText);
 
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
@@ -86,7 +107,10 @@ function AppLayout({ onClose }) {
 
       {/* button to exucte translation */}
       <button>
-        <i className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"></i>
+        <i
+          className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#7dd3fc] to-[#065f46] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"
+          onClick={handleTranslateText}
+        ></i>
       </button>
 
       {/* textarea for result of translation */}
