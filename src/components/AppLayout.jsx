@@ -62,6 +62,13 @@ function AppLayout({ onClose }) {
     }
   }
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleTranslateText();
+    }
+  }
+
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
       {/* button to close the app */}
@@ -113,6 +120,7 @@ function AppLayout({ onClose }) {
           value={inputText || ""}
           className="textarea"
           onChange={handleUpdateInput}
+          onKeyDown={handleKeyDown}
         ></textarea>
         <div className="absolute bottom-2 right-2 text-slate-700">
           {itemCounter}/{maxItems}
