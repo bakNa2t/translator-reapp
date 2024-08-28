@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 import { lang } from "../data/langData";
@@ -7,6 +7,8 @@ function AppLayout({ onClose }) {
   AppLayout.propTypes = {
     onClose: PropTypes.func,
   };
+
+  const ref = useRef();
 
   const [selectedLangFrom, setSelectedLangFrom] = useState("en");
   const [selectedLangTo, setSelectedLangTo] = useState("en");
@@ -69,6 +71,26 @@ function AppLayout({ onClose }) {
     }
   }
 
+  function handleClickOutside(e) {
+    if (ref.current && !ref.current.contains(e.target)) {
+      setIsDisplayLang(false);
+    }
+  }
+
+  useEffect(
+    function () {
+      if (isDisplayLang) {
+        document.addEventListener("mousedown", handleClickOutside);
+      } else {
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    },
+    [isDisplayLang]
+  );
+
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-8 pt-12 pb-12 relative">
       {/* button to close the app */}
@@ -99,7 +121,10 @@ function AppLayout({ onClose }) {
       </div>
 
       {isDisplayLang && (
-        <div className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#7dd3fc] to-[#065f46] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide">
+        <div
+          className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#7dd3fc] to-[#065f46] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide"
+          ref={ref}
+        >
           <ul>
             {Object.entries(lang).map(([langCode, langName]) => (
               <li
