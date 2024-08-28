@@ -14,6 +14,8 @@ function AppLayout({ onClose }) {
   const [currentLangSelection, setCurrentLangSelection] = useState(null);
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
+  const [itemCounter, setItemCounter] = useState(0);
+  const maxItems = 200;
 
   function handleLangClick(type) {
     setCurrentLangSelection(type);
@@ -48,15 +50,16 @@ function AppLayout({ onClose }) {
 
       const data = await res.json();
 
-      console.log(data);
-
       setTranslatedText(data.responseData.translatedText);
     }
   }
 
   function handleUpdateInput(e) {
     const value = e.target.value;
-    setInputText(value);
+    if (value.length <= maxItems) {
+      setInputText(value);
+      setItemCounter(value.length);
+    }
   }
 
   return (
@@ -111,7 +114,9 @@ function AppLayout({ onClose }) {
           className="textarea"
           onChange={handleUpdateInput}
         ></textarea>
-        <div className="absolute bottom-2 right-2 text-slate-700">0 / 200</div>
+        <div className="absolute bottom-2 right-2 text-slate-700">
+          {itemCounter}/{maxItems}
+        </div>
       </div>
 
       {/* button to exucte translation */}
