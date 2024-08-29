@@ -102,7 +102,7 @@ function AppLayout({ onClose }) {
       </button>
 
       {/*header of the app to show selected languages  */}
-      <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#30cfd0] to-[#330867] text-zinc-800 rounded-lg shadow-md shadow-cyan-500">
+      <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#30cfd0] to-[#330867] text-zinc-800 rounded-lg shadow-md shadow-[#020617]">
         <div className="lang" onClick={() => handleLangClick("from")}>
           <span className="opacity-50 text-[8px] sm:text-sm">From</span>{" "}
           <span className="drop-shadow-text_2_purple">

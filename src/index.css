@@ -17,5 +17,5 @@
 }
 
 .textarea {
-  @apply w-full h-48 max-[392px]:h-44 max-[392px]:text-sm resize-none bg-[#c7d2fe] shadow-md shadow-black rounded-lg px-4 py-2 font-righteous font-light leading-5;
+  @apply w-full h-48 max-[392px]:h-44 max-[392px]:text-sm resize-none bg-[#64748b] shadow-md shadow-black rounded-lg px-4 py-2 font-righteous font-light leading-5;
 }

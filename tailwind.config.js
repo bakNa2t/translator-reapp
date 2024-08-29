@@ -13,6 +13,9 @@ export default {
         text_2_cyan: "0 0 2px #30cfd0",
         text_2_purple: "0 0 2px #6914c3",
       },
+      boxShadow: {
+        sd_1: "0 3px 4px 0 rgba(155,244,239, 0.3), 0 3px 4px 0 rgba(155,244,239, 0.12)",
+      },
       translate: ["active"],
     },
   },
