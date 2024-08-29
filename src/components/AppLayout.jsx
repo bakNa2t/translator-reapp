@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
+import LangSection from "./LangSection";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
@@ -80,20 +81,6 @@ function AppLayout({ onClose }) {
     }
   }
 
-  // useEffect(
-  //   function () {
-  //     if (isDisplayLang) {
-  //       document.addEventListener("mousedown", handleClickOutside);
-  //     } else {
-  //       document.removeEventListener("mousedown", handleClickOutside);
-  //     }
-  //     return () => {
-  //       document.removeEventListener("mousedown", handleClickOutside);
-  //     };
-  //   },
-  //   [isDisplayLang]
-  // );
-
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-6 sm:px-8 pt-12 pb-12 relative">
       {/* button to close the app */}
@@ -148,12 +135,11 @@ function AppLayout({ onClose }) {
 
       {/* textarea for translation and counter  */}
       <div className="w-full relative">
-        <textarea
-          value={inputText || ""}
-          className="textarea"
+        <LangSection
+          value={inputText}
           onChange={handleUpdateInput}
           onKeyDown={handleKeyDown}
-        ></textarea>
+        />
         <div className="absolute bottom-2 right-2 text-slate-700">
           {itemCounter}/{maxItems}
         </div>
@@ -169,11 +155,7 @@ function AppLayout({ onClose }) {
 
       {/* textarea for result of translation */}
       <div className="w-full">
-        <textarea
-          value={translatedText}
-          className="textarea"
-          readOnly
-        ></textarea>
+        <LangSection value={translatedText} readOnly={true} />
       </div>
     </main>
   );
