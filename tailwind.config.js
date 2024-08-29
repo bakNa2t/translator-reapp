@@ -9,6 +9,10 @@ export default {
         shojumaru: ["Shojumaru", "system-ui", "sans-serif"],
         notoSansJp: ["Noto Sans JP", "sans-serif"],
       },
+      dropShadow: {
+        text_2_cyan: "0 0 2px #30cfd0",
+        text_2_purple: "0 0 2px #6914c3",
+      },
       translate: ["active"],
     },
   },

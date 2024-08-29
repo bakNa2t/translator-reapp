@@ -13,7 +13,7 @@
 }
 
 .lang {
-  @apply text-sm sm:text-lg text-right uppercase cursor-pointer;
+  @apply text-sm sm:text-lg text-right uppercase cursor-pointer font-semibold;
 }
 
 .textarea {
