@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import ButtonStart from "./ButtonStart";
+
 function AppStartpage({ onOpen }) {
   AppStartpage.propTypes = {
     onOpen: PropTypes.func,
@@ -19,17 +21,12 @@ function AppStartpage({ onOpen }) {
       </div>
       <div className="w-full text-right space-y-5 my-20">
         <h1 className="font-righteous text-3xl sm:text-4xl text-sky-200 uppercase">
-          <span className="text-2xl sm:text-2xl opacity-70 block text-sky-400">
+          <span className="text-2xl sm:text-2xl opacity-50 block text-sky-500">
             Welcome to
           </span>{" "}
           <span className="text-[#30cfd0]">Translator ReApp</span>
         </h1>
-        <button
-          className="w-40 h-10 bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full font-righteous font-bold text-base uppercase text-gray-800 tracking-widest active:translate-y-[1px]"
-          onClick={onOpen}
-        >
-          Get Started
-        </button>
+        <ButtonStart onOpen={onOpen} />
       </div>
     </div>
   );

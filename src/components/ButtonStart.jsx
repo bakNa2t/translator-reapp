@@ -10,7 +10,7 @@ function ButtonStart({ onOpen }) {
       className="w-40 h-10 bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full font-righteous font-bold text-base uppercase text-gray-800 tracking-widest active:translate-y-[1px] hover:shadow-lg hover:shadow-sky-400 transition duration-200"
       onClick={onOpen}
     >
-      Get Started
+      <span className="drop-shadow-text_2_cyan">Get Started</span>
     </button>
   );
 }
