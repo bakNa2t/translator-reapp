@@ -6,20 +6,28 @@ import LangSection from "./LangSection";
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useEventKey } from "../hooks/useEventKey";
+import { useLangSelect } from "../hooks/useLangSelect";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
     onClose: PropTypes.func,
   };
 
-  const [selectedLangFrom, setSelectedLangFrom] = useState("en");
-  const [selectedLangTo, setSelectedLangTo] = useState("en");
-  const [isDisplayLang, setIsDisplayLang] = useState(false);
   const [currentLangSelection, setCurrentLangSelection] = useState(null);
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
   const [itemCounter, setItemCounter] = useState(0);
   const maxItems = 200;
+
+  const {
+    handleLangSelection,
+    selectedLangFrom,
+    setSelectedLangFrom,
+    selectedLangTo,
+    setSelectedLangTo,
+    isDisplayLang,
+    setIsDisplayLang,
+  } = useLangSelect(currentLangSelection);
 
   const ref = useOutsideClick(handleClickOutside, isDisplayLang);
 
@@ -28,16 +36,6 @@ function AppLayout({ onClose }) {
   function handleLangClick(type) {
     setCurrentLangSelection(type);
     setIsDisplayLang(true);
-  }
-
-  function handleLangSelection(langCode) {
-    if (currentLangSelection === "from") {
-      setSelectedLangFrom(langCode);
-    } else {
-      setSelectedLangTo(langCode);
-    }
-
-    setIsDisplayLang(false);
   }
 
   function handleSwapLang() {
