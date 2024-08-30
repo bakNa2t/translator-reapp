@@ -1,16 +1,16 @@
-import { /*useEffect, useRef*/ useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
+
+import LangSection from "./LangSection";
 
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
-import LangSection from "./LangSection";
+import { useEventKey } from "../hooks/useEventKey";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
     onClose: PropTypes.func,
   };
-
-  // const ref = useRef();
 
   const [selectedLangFrom, setSelectedLangFrom] = useState("en");
   const [selectedLangTo, setSelectedLangTo] = useState("en");
@@ -22,6 +22,8 @@ function AppLayout({ onClose }) {
   const maxItems = 200;
 
   const ref = useOutsideClick(handleClickOutside, isDisplayLang);
+
+  const handlerEventKey = useEventKey("Enter", handleTranslateText);
 
   function handleLangClick(type) {
     setCurrentLangSelection(type);
@@ -65,13 +67,6 @@ function AppLayout({ onClose }) {
     if (value.length <= maxItems) {
       setInputText(value);
       setItemCounter(value.length);
-    }
-  }
-
-  function handleKeyDown(e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleTranslateText();
     }
   }
 
@@ -138,7 +133,7 @@ function AppLayout({ onClose }) {
         <LangSection
           value={inputText}
           onChange={handleUpdateInput}
-          onKeyDown={handleKeyDown}
+          onKeyDown={handlerEventKey}
         />
         <div className="absolute bottom-2 right-2 text-slate-700">
           {itemCounter}/{maxItems}
