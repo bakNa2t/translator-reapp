@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 import LangSection from "./LangSection";
+import Loader from "./Loader";
 
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
@@ -13,6 +14,7 @@ function AppLayout({ onClose }) {
     onClose: PropTypes.func,
   };
 
+  const [isLoading, setIsLoading] = useState(false);
   const [currentLangSelection, setCurrentLangSelection] = useState(null);
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
@@ -48,6 +50,8 @@ function AppLayout({ onClose }) {
       setTranslatedText("");
       return;
     } else {
+      setIsLoading(true);
+
       const res = await fetch(
         `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
           inputText
@@ -57,6 +61,8 @@ function AppLayout({ onClose }) {
       const data = await res.json();
 
       setTranslatedText(data.responseData.translatedText);
+
+      setIsLoading(false);
     }
   }
 
@@ -139,12 +145,16 @@ function AppLayout({ onClose }) {
       </div>
 
       {/* button to exucte translation */}
-      <button>
-        <i
-          className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"
-          onClick={handleTranslateText}
-        ></i>
-      </button>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <button>
+          <i
+            className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"
+            onClick={handleTranslateText}
+          ></i>
+        </button>
+      )}
 
       {/* textarea for result of translation */}
       <div className="w-full">
