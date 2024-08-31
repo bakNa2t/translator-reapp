@@ -164,6 +164,7 @@ function AppLayout({ onClose }) {
       <div className="w-full relative">
         <LangSection
           value={inputText}
+          placeholder={"Enter text to translate..."}
           onChange={handleUpdateInput}
           onKeyDown={handlerEventKey}
         />
@@ -186,7 +187,11 @@ function AppLayout({ onClose }) {
 
       {/* textarea for result of translation */}
       <div className="w-full">
-        <LangSection value={translatedText} readOnly={true} />
+        <LangSection
+          value={translatedText}
+          placeholder={"Here will be the result..."}
+          readOnly={true}
+        />
       </div>
     </main>
   );
