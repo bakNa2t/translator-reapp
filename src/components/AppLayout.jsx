@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import LangSection from "./LangSection";
@@ -34,6 +34,34 @@ function AppLayout({ onClose }) {
   const ref = useOutsideClick(handleClickOutside, isDisplayLang);
 
   const handlerEventKey = useEventKey("Enter", handleTranslateText);
+
+  useEffect(
+    function () {
+      async function handleTranslateText() {
+        if (!inputText.trim()) {
+          setTranslatedText("");
+          return;
+        } else {
+          setIsLoading(true);
+
+          const res = await fetch(
+            `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
+              inputText
+            )}&langpair=${selectedLangFrom}|${selectedLangTo}`
+          );
+
+          const data = await res.json();
+
+          setTranslatedText(data.responseData.translatedText);
+
+          setIsLoading(false);
+        }
+      }
+      handleTranslateText();
+    },
+
+    [inputText, selectedLangFrom, selectedLangTo]
+  );
 
   function handleLangClick(type) {
     setCurrentLangSelection(type);
