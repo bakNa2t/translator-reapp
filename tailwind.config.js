@@ -15,6 +15,8 @@ export default {
       },
       boxShadow: {
         sd_1: "0 3px 4px 0 rgba(155,244,239, 0.3), 0 3px 4px 0 rgba(155,244,239, 0.12)",
+        sd_2: "0 0 1rem 0 rgba(155,244,239, 0.3), 0 3px 4px 0 rgba(155,244,239, 0.12)",
+        sd_3: "0 0 1.4rem 0 rgba(174,129,255, 0.8), 0 3px 4px 0 rgba(105,20,195, 0.4)",
       },
       translate: ["active"],
     },
