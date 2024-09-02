@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import AppLayout from "./components/AppLayout";
 import AppStartpage from "./components/AppStartpage";
@@ -6,6 +6,22 @@ import { MoonOutlined } from "@ant-design/icons";
 
 function App() {
   const [showApp, setShowApp] = useState(false);
+  const [theme, setTheme] = useState("light");
+
+  useEffect(
+    function () {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    },
+    [theme]
+  );
+
+  function handleThemeSwap() {
+    setTheme(theme === "light" ? "dark" : "light");
+  }
 
   function handleCloseApp() {
     setShowApp(false);
@@ -25,8 +41,8 @@ function App() {
           <AppStartpage onOpen={handleOpenApp} />
         )}
       </div>
-      <button>
-        <MoonOutlined className="absolute top-5 right-5 text-3xl text-gray-600" />
+      <button className="absolute top-5 right-5" onClick={handleThemeSwap}>
+        <MoonOutlined className="text-3xl text-gray-600" />
       </button>
     </div>
   );
