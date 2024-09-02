@@ -69,6 +69,12 @@ function AppLayout({ onClose }) {
     setIsDisplayLang(true);
   }
 
+  function handleSwapText() {
+    setInputText(translatedText);
+    setTranslatedText(inputText);
+    handleSwapLang();
+  }
+
   function handleSwapLang() {
     setSelectedLangFrom(selectedLangTo);
     setSelectedLangTo(selectedLangFrom);
@@ -179,7 +185,10 @@ function AppLayout({ onClose }) {
         <Loader />
       ) : (
         <button>
-          <SwapOutlined className="w-12 h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan transition duration-300" />
+          <SwapOutlined
+            className="w-12 h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan transition duration-300"
+            onClick={handleSwapText}
+          />
         </button>
       )}
 
