@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SwapOutlined } from "@ant-design/icons";
 import PropTypes from "prop-types";
 
 import LangSection from "./LangSection";
@@ -178,10 +179,7 @@ function AppLayout({ onClose }) {
         <Loader />
       ) : (
         <button>
-          <i
-            className="fa-solid fa-chevron-down w-12 h-12 bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full text-2xl text-slate-900 flex justify-center items-center active:translate-y-[1px]"
-            onClick={handleTranslateText}
-          ></i>
+          <SwapOutlined className="w-12 h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] rounded-full text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan transition duration-300" />
         </button>
       )}
 
