@@ -72,7 +72,9 @@ function AppLayout({ onClose }) {
   function handleSwapText() {
     setInputText(translatedText);
     setTranslatedText(inputText);
-    handleSwapLang();
+    if (inputText.trim()) {
+      handleSwapLang();
+    }
   }
 
   function handleSwapLang() {
