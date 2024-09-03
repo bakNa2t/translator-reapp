@@ -128,13 +128,13 @@ function AppLayout({ onClose }) {
 
       {isDisplayLang && (
         <div
-          className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#30cfd0] to-[#330867] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide"
+          className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide"
           ref={ref}
         >
           <ul>
             {Object.entries(lang).map(([langCode, langName]) => (
               <li
-                className="cursor-pointer hover:bg-[#a8edea] transition duration-200 p-2 rounded"
+                className="cursor-pointer hover:bg-[#a8edea] dark:hover:bg-[#48d1cc] transition duration-200 p-2 rounded"
                 key={langCode}
                 onClick={() => handleLangSelection(langCode)}
               >

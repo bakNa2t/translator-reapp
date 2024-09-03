@@ -17,7 +17,7 @@
 }
 
 .textarea {
-  @apply w-full h-48 max-[392px]:h-44 max-[392px]:text-sm resize-none bg-[#64748b] shadow-md shadow-black rounded-lg px-4 py-2 font-righteous font-light leading-5 placeholder:italic placeholder:text-slate-800 placeholder:opacity-70 placeholder:font-righteous;
+  @apply w-full h-48 max-[392px]:h-44 max-[392px]:text-sm resize-none bg-[#64748b] dark:bg-[#6ee7b7] shadow-md shadow-black rounded-lg px-4 py-2 font-righteous font-light leading-5 placeholder:italic placeholder:text-slate-800 dark:placeholder:text-teal-800 placeholder:opacity-70 placeholder:font-righteous;
 }
 
 .loader {
