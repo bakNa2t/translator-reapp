@@ -48,7 +48,7 @@ function App() {
         )}
       </div>
       <button
-        className="absolute top-2 right-2 text-xl sm:top-5 sm:right-5 sm:text-3xl text-yellow-300 dark:text-indigo-800 opacity-65 hover:opacity-100 transition duration-200 dark:hover:drop-shadow-icon_8_green hover:drop-shadow-icon_8_coral active:translate-y-[1px]"
+        className="absolute top-2 right-2 text-xl sm:top-5 sm:right-5 sm:text-3xl text-yellow-300 dark:text-emerald-800 opacity-65 hover:opacity-100 transition duration-200 dark:hover:drop-shadow-icon_8_green hover:drop-shadow-icon_8_coral active:translate-y-[1px]"
         onClick={handleThemeSwap}
       >
         {theme === "dark" ? <MoonOutlined /> : <SunOutlined />}

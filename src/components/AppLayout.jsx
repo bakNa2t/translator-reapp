@@ -97,7 +97,7 @@ function AppLayout({ onClose }) {
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-6 sm:px-8 pt-12 pb-12 relative">
       {/* button to close the app */}
       <button
-        className="absolute top-2 right-4 text-xl text-gray-300"
+        className="absolute top-2 right-4 text-xl text-gray-300 dark:text-emerald-600 opacity-50 hover:opacity-100 transition duration-200"
         onClick={onClose}
       >
         <i className="fa-solid fa-xmark"></i>
@@ -161,11 +161,11 @@ function AppLayout({ onClose }) {
       {isLoading ? (
         <Loader />
       ) : (
-        <button>
-          <SwapOutlined
-            className="w-12 h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] rounded-full text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan transition duration-300"
-            onClick={handleSwapText}
-          />
+        <button
+          className="w-12 h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] rounded-full text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan transition duration-300"
+          onClick={handleSwapText}
+        >
+          <SwapOutlined />
         </button>
       )}
 
