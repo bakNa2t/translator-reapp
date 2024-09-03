@@ -14,6 +14,8 @@ export default {
         text_2_cyan: "0 0 2px #30cfd0",
         text_2_purple: "0 0 2px #6914c3",
         text_2_emerald: "0 0 2px #065f46",
+        text_2_green: "0 0 2px #84cc16",
+        text_2_yellow: "0 0 2px #eab308",
         icon_8_green: "0 0 8px #00ff7f ",
         icon_8_coral: "0 0 8px #ff7f50 ",
       },
