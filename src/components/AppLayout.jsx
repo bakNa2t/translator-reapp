@@ -7,7 +7,6 @@ import Loader from "./Loader";
 
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
-import { useEventKey } from "../hooks/useEventKey";
 import { useLangSelect } from "../hooks/useLangSelect";
 
 function AppLayout({ onClose }) {
@@ -33,8 +32,6 @@ function AppLayout({ onClose }) {
   } = useLangSelect(currentLangSelection);
 
   const ref = useOutsideClick(handleClickOutside, isDisplayLang);
-
-  const handlerEventKey = useEventKey("Enter", handleTranslateText);
 
   useEffect(
     function () {
@@ -80,27 +77,6 @@ function AppLayout({ onClose }) {
   function handleSwapLang() {
     setSelectedLangFrom(selectedLangTo);
     setSelectedLangTo(selectedLangFrom);
-  }
-
-  async function handleTranslateText() {
-    if (!inputText.trim()) {
-      setTranslatedText("");
-      return;
-    } else {
-      setIsLoading(true);
-
-      const res = await fetch(
-        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
-          inputText
-        )}&langpair=${selectedLangFrom}|${selectedLangTo}`
-      );
-
-      const data = await res.json();
-
-      setTranslatedText(data.responseData.translatedText);
-
-      setIsLoading(false);
-    }
   }
 
   function handleUpdateInput(e) {
@@ -175,7 +151,6 @@ function AppLayout({ onClose }) {
           value={inputText}
           placeholder={"Enter text to translate..."}
           onChange={handleUpdateInput}
-          onKeyDown={handlerEventKey}
         />
         <div className="absolute bottom-2 right-2 text-slate-700">
           {itemCounter}/{maxItems}
