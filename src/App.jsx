@@ -38,7 +38,7 @@ function App() {
         {showApp ? (
           <AppLayout onClose={handleCloseApp} />
         ) : (
-          <AppStartpage onOpen={handleOpenApp} />
+          <AppStartpage onOpen={handleOpenApp} theme={theme} />
         )}
       </div>
       <button
