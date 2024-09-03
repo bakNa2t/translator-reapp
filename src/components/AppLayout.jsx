@@ -152,7 +152,7 @@ function AppLayout({ onClose }) {
           placeholder={"Enter text to translate..."}
           onChange={handleUpdateInput}
         />
-        <div className="absolute bottom-2 right-2 text-slate-700">
+        <div className="absolute bottom-2 right-2 text-slate-700 text-xs sm:text-sm">
           {itemCounter}/{maxItems}
         </div>
       </div>
