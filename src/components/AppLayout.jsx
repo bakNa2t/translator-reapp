@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 
 import LangSection from "./LangSection";
 import LangSelector from "./LangSelector";
-import Button from "./Button";
-import Loader from "./Loader";
+import LangItem from "./LangItem";
+import Button from "../ui/Button";
+import Loader from "../ui/Loader";
 
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useLangSelect } from "../hooks/useLangSelect";
-import LangItem from "./LangItem";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
