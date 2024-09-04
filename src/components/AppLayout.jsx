@@ -116,10 +116,12 @@ function AppLayout({ onClose }) {
         </div>
 
         {/* button to swap languages */}
-        <i
-          className="fa-solid fa-arrows-rotate text-2xl mx-8 cursor-pointer hover:animate-spin"
+        <Button
+          className={"text-2xl mx-8 cursor-pointer"}
           onClick={handleSwapLang}
-        ></i>
+        >
+          <i className="fa-solid fa-arrows-rotate hover:animate-spin" />
+        </Button>
 
         <div className="lang" onClick={() => handleLangClick("to")}>
           <span className="opacity-50 text-[8px] sm:text-sm">To</span>{" "}
@@ -164,12 +166,14 @@ function AppLayout({ onClose }) {
       {isLoading ? (
         <Loader />
       ) : (
-        <button
-          className="w-10 h-10 sm:w-12 sm:h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] rounded-full text-xl sm:text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan dark:hover:drop-shadow-text_2_yellow transition duration-300"
+        <Button
+          className={
+            "w-10 h-10 sm:w-12 sm:h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] rounded-full text-xl sm:text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan dark:hover:drop-shadow-text_2_yellow transition duration-300"
+          }
           onClick={handleSwapText}
         >
           <SwapOutlined />
-        </button>
+        </Button>
       )}
 
       {/* textarea for result of translation */}
