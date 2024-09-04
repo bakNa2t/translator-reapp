@@ -2,10 +2,10 @@ import { useEffect } from "react";
 
 function AppBanner() {
   useEffect(function () {
-    const elem = document.querySelector(".shadow-sd_2");
+    const elem = document.querySelector(".shadow-sd_4");
 
     const interval = setInterval(function () {
-      elem.classList.toggle("shadow-sd_3");
+      elem.classList.toggle("shadow-sd_5");
     }, 2000);
 
     return function () {
@@ -14,7 +14,7 @@ function AppBanner() {
   }, []);
 
   return (
-    <div className="w-full h-64 bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] rounded-t-full rounded-bl-full flex flex-col justify-center text-[#abecd6] dark:text-emerald-600 pr-6 shadow-sd_2 dark:shadow-sd_4">
+    <div className="w-full h-64 dark:bg-gradient-to-r dark:from-[#30cfd0] dark:to-[#330867] bg-gradient-to-r from-[#f9f586] to-[#96fbc4] rounded-t-full rounded-bl-full flex flex-col justify-center dark:text-[#abecd6] text-emerald-600 pr-6 dark:shadow-sd_2 shadow-sd_4">
       <span className="font-shojumaru text-5xl sm:text-6xl text-left pl-8">
         Hello
       </span>

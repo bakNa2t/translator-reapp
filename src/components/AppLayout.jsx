@@ -100,7 +100,7 @@ function AppLayout({ onClose }) {
       {/* button to close the app */}
       <Button
         className={
-          "absolute top-2 right-4 text-xl text-gray-300 dark:text-emerald-600 opacity-50 hover:opacity-100 transition duration-200"
+          "absolute top-2 right-4 text-xl dark:text-gray-300 text-emerald-600 opacity-50 hover:opacity-100 transition duration-200"
         }
         onClick={onClose}
       >
@@ -108,10 +108,10 @@ function AppLayout({ onClose }) {
       </Button>
 
       {/*header of the app to show selected languages  */}
-      <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] text-neutral-800 dark:text-teal-800 rounded-lg shadow-md shadow-[#020617]">
+      <div className="w-full min-h-20 flex justify-center items-center px-4 dark:bg-gradient-to-r dark:from-[#30cfd0] dark:to-[#330867] bg-gradient-to-r from-[#f9f586] to-[#96fbc4] dark:text-neutral-800 text-teal-800 rounded-lg shadow-md shadow-[#020617]">
         <LangSelector className="lang" onClick={() => handleLangClick("from")}>
           <span className="opacity-50 text-[8px] sm:text-sm">From</span>{" "}
-          <span className="drop-shadow-text_2_purple dark:drop-shadow-text_2_green">
+          <span className="dark:drop-shadow-text_2_purple drop-shadow-text_2_green">
             {lang[selectedLangFrom] || "English"}
           </span>
         </LangSelector>
@@ -126,7 +126,7 @@ function AppLayout({ onClose }) {
 
         <LangSelector className="lang" onClick={() => handleLangClick("to")}>
           <span className="opacity-50 text-[8px] sm:text-sm">To</span>{" "}
-          <span className="drop-shadow-text_2_cyan dark:drop-shadow-text_2_yellow">
+          <span className="dark:drop-shadow-text_2_cyan drop-shadow-text_2_yellow">
             {lang[selectedLangTo] || "English"}
           </span>
         </LangSelector>
@@ -134,13 +134,13 @@ function AppLayout({ onClose }) {
 
       {isDisplayLang && (
         <div
-          className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide"
+          className="w-[calc(100%-4rem)] h-[calc(100%-9rem)] dark:bg-gradient-to-r dark:from-[#30cfd0] dark:to-[#330867] bg-gradient-to-r from-[#f9f586] to-[#96fbc4] absolute top-32 left-8 z-10 rounded shadow-lg p-4 overflow-y-scroll scrollbar-hide"
           ref={ref}
         >
           <ul>
             {Object.entries(lang).map(([langCode, langName]) => (
               <li
-                className="cursor-pointer hover:bg-[#a8edea] dark:hover:bg-[#48d1cc] transition duration-200 p-2 rounded"
+                className="cursor-pointer dark:hover:bg-[#a8edea] hover:bg-[#48d1cc] transition duration-200 p-2 rounded"
                 key={langCode}
                 onClick={() => handleLangSelection(langCode)}
               >
@@ -169,7 +169,7 @@ function AppLayout({ onClose }) {
       ) : (
         <Button
           className={
-            "w-10 h-10 sm:w-12 sm:h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] rounded-full text-xl sm:text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan dark:hover:drop-shadow-text_2_yellow transition duration-300"
+            "w-10 h-10 sm:w-12 sm:h-12 font-bold dark:bg-gradient-to-r dark:from-[#30cfd0] dark:to-[#330867] bg-gradient-to-r from-[#f9f586] to-[#96fbc4] rounded-full text-xl sm:text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] dark:hover:drop-shadow-text_2_cyan hover:drop-shadow-text_2_yellow transition duration-300"
           }
           onClick={handleSwapText}
         >
