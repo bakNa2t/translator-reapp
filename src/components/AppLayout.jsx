@@ -3,12 +3,12 @@ import { SwapOutlined } from "@ant-design/icons";
 import PropTypes from "prop-types";
 
 import LangSection from "./LangSection";
+import Button from "./Button";
 import Loader from "./Loader";
 
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useLangSelect } from "../hooks/useLangSelect";
-import Button from "./Button";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
