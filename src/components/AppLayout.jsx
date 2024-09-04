@@ -10,6 +10,7 @@ import Loader from "./Loader";
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useLangSelect } from "../hooks/useLangSelect";
+import LangItem from "./LangItem";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
@@ -139,13 +140,12 @@ function AppLayout({ onClose }) {
         >
           <ul>
             {Object.entries(lang).map(([langCode, langName]) => (
-              <li
-                className="cursor-pointer dark:hover:bg-[#a8edea] hover:bg-[#48d1cc] transition duration-200 p-2 rounded"
-                key={langCode}
+              <LangItem
                 onClick={() => handleLangSelection(langCode)}
+                key={langCode}
               >
                 {langName}
-              </li>
+              </LangItem>
             ))}
           </ul>
         </div>
