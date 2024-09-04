@@ -8,6 +8,7 @@ import Loader from "./Loader";
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useLangSelect } from "../hooks/useLangSelect";
+import Button from "./Button";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
@@ -96,12 +97,14 @@ function AppLayout({ onClose }) {
   return (
     <main className="w-full flex flex-col gap-y-4 justify-center items-center px-6 sm:px-8 pt-12 pb-12 relative">
       {/* button to close the app */}
-      <button
-        className="absolute top-2 right-4 text-xl text-gray-300 dark:text-emerald-600 opacity-50 hover:opacity-100 transition duration-200"
+      <Button
+        className={
+          "absolute top-2 right-4 text-xl text-gray-300 dark:text-emerald-600 opacity-50 hover:opacity-100 transition duration-200"
+        }
         onClick={onClose}
       >
         <i className="fa-solid fa-xmark"></i>
-      </button>
+      </Button>
 
       {/*header of the app to show selected languages  */}
       <div className="w-full min-h-20 flex justify-center items-center px-4 bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] text-neutral-800 dark:text-teal-800 rounded-lg shadow-md shadow-[#020617]">
@@ -162,7 +165,7 @@ function AppLayout({ onClose }) {
         <Loader />
       ) : (
         <button
-          className="w-12 h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] rounded-full text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan transition duration-300"
+          className="w-10 h-10 sm:w-12 sm:h-12 font-bold bg-gradient-to-r from-[#30cfd0] to-[#330867] dark:bg-gradient-to-r dark:from-[#f9f586] dark:to-[#96fbc4] rounded-full text-xl sm:text-2xl text-slate-900 rotate-90 flex justify-center items-center active:translate-y-[1px] hover:drop-shadow-text_2_cyan dark:hover:drop-shadow-text_2_yellow transition duration-300"
           onClick={handleSwapText}
         >
           <SwapOutlined />
