@@ -13,7 +13,7 @@ function AppStartpage({ onOpen, theme }) {
   return (
     <div className="w-full h-full flex flex-col justify-center items-center p-6 sm:p-12">
       <AppBanner theme={theme} />
-      <AppHeader onOpen={onOpen} />
+      <AppHeader onOpen={onOpen} theme={theme} />
     </div>
   );
 }
