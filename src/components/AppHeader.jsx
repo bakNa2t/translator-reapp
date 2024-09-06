@@ -13,9 +13,9 @@ function AppHeader({ onOpen, theme }) {
     <div className="w-full text-right space-y-5 my-20">
       <div className="flex justify-end gap-3 sm:gap-5">
         {theme === "dark" ? (
-          <Logo src="public/logo-dark.png" alt="logo-dark" />
+          <Logo src="logo-dark.png" alt="logo-dark" />
         ) : (
-          <Logo src="public/logo-light.png" alt="logo-light" />
+          <Logo src="logo-light.png" alt="logo-light" />
         )}
         <h1 className="font-righteous text-2xl sm:text-3xl text-sky-200 uppercase">
           <span className="text-lg sm:text-xl opacity-50 block dark:text-sky-500 text-emerald-800">
