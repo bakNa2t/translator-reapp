@@ -41,3 +41,11 @@ The development server will be running on http://localhost:5173. You can open th
 - [Font Awesome Icons cdn](https://cdnjs.com/libraries/font-awesome)
 
 click here to visit => [_**Translator ReApp**_](https://translator-reapp.vercel.app/)
+
+<div align="center">
+    <p style="width: 500px;">
+        <a href="https://translator-reapp.vercel.app/" target="_blank" >
+            <img alt="Translator ReApp" src ="./public/translator-banner.png" width="600">
+        </a>
+    </p>
+</div>
