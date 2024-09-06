@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 
 import Button from "../ui/Button";
 import Logo from "../ui/Logo";
+import Heading from "../ui/Heading";
 
 function AppHeader({ onOpen, theme }) {
   AppHeader.propTypes = {
@@ -17,14 +18,14 @@ function AppHeader({ onOpen, theme }) {
         ) : (
           <Logo src="logo-light.png" alt="logo-light" />
         )}
-        <h1 className="font-righteous text-2xl sm:text-3xl text-sky-200 uppercase">
+        <Heading className="font-righteous text-2xl sm:text-3xl text-sky-200 uppercase">
           <span className="text-lg sm:text-xl opacity-50 block dark:text-sky-500 text-emerald-800">
             Welcome to
           </span>{" "}
           <span className="dark:text-[#30cfd0] text-emerald-600">
             Translator ReApp
           </span>
-        </h1>
+        </Heading>
       </div>
       <Button
         className={
