@@ -162,9 +162,7 @@ function AppLayout({ onClose }) {
         {/* <div className="absolute bottom-2 right-2 text-slate-700 text-xs sm:text-sm">
           {itemCounter}/{maxItems}
         </div> */}
-        <LangItemCounter>
-          {itemCounter}/{maxItems}
-        </LangItemCounter>
+        <LangItemCounter itemCounter={itemCounter} maxItems={maxItems} />
       </div>
 
       {/* button to exucte translation */}
