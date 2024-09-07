@@ -11,6 +11,7 @@ import Loader from "../ui/Loader";
 import { lang } from "../data/langData";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useLangSelect } from "../hooks/useLangSelect";
+import LangItemCounter from "./LangItemCounter";
 
 function AppLayout({ onClose }) {
   AppLayout.propTypes = {
@@ -158,9 +159,12 @@ function AppLayout({ onClose }) {
           placeholder={"Enter text to translate..."}
           onChange={handleUpdateInput}
         />
-        <div className="absolute bottom-2 right-2 text-slate-700 text-xs sm:text-sm">
+        {/* <div className="absolute bottom-2 right-2 text-slate-700 text-xs sm:text-sm">
           {itemCounter}/{maxItems}
-        </div>
+        </div> */}
+        <LangItemCounter>
+          {itemCounter}/{maxItems}
+        </LangItemCounter>
       </div>
 
       {/* button to exucte translation */}
