@@ -4,6 +4,7 @@ import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import AppLayout from "./components/AppLayout";
 import AppStartpage from "./components/AppStartpage";
 import AppFooter from "./components/AppFooter";
+import Button from "./ui/Button";
 
 function App() {
   const [showApp, setShowApp] = useState(false);
@@ -49,12 +50,12 @@ function App() {
         )}
       </div>
       <AppFooter />
-      <button
+      <Button
         className="absolute top-2 right-2 text-xl sm:top-5 sm:right-5 sm:text-3xl dark:text-yellow-300 text-emerald-800 opacity-65 hover:opacity-100 transition duration-200 hover:drop-shadow-icon_8_green dark:hover:drop-shadow-icon_8_coral active:translate-y-[1px]"
         onClick={handleThemeSwap}
       >
         {theme === "dark" ? <SunOutlined /> : <MoonOutlined />}
-      </button>
+      </Button>
     </div>
   );
 }
