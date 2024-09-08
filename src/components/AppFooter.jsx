@@ -2,7 +2,7 @@ function AppFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full fixed bottom-1 flex justify-center items-center text-lg gap-2">
+    <footer className="fixed bottom-1 flex justify-center items-center text-[.7rem] font-light gap-2">
       <span>&copy;</span> Copyright {currentYear}. Design by{" "}
       <a
         className="text-emerald-600 font-semibold no-underline transition-all duration-300 hover:transform hover:-translate-y-1"
