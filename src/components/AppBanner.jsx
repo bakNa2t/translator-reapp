@@ -3,6 +3,9 @@ import { Typewriter } from "react-simple-typewriter";
 
 const words = {
   lineOne: ["Hello", "Привет", "Bonjour", "Ahoj"],
+  lineTwo: ["Ciao", "Hola", "Witam", "Sveiki"],
+  lineThree: ["こんにちは", "안녕하세요", "नमस्कार", "你好"],
+  lineFour: ["Cәлем", "नमस्ते", "Merhaba", "با سلام"],
 };
 
 function AppBanner() {
@@ -25,17 +28,45 @@ function AppBanner() {
           words={words.lineOne}
           loop={true}
           cursor={true}
-          cursorStyle="_"
+          cursorStyle="|"
           typeSpeed={100}
           deleteSpeed={70}
           delaySpeed={1500}
         />
       </span>
-      <span className="text-2xl sm:text-3xl text-center">Ciao</span>
-      <span className="font-notoSansJp text-3xl sm:text-4xl text-right">
-        こんにちは
+      <span className="text-2xl sm:text-3xl text-center">
+        <Typewriter
+          words={words.lineTwo}
+          loop={true}
+          cursor={true}
+          cursorStyle="|"
+          typeSpeed={100}
+          deleteSpeed={70}
+          delaySpeed={1700}
+        />
       </span>
-      <span className="text-2xl sm:text-3xl text-right">Hola</span>
+      <span className="font-notoSansJp text-3xl sm:text-4xl text-right">
+        <Typewriter
+          words={words.lineThree}
+          loop={true}
+          cursor={true}
+          cursorStyle="|"
+          typeSpeed={120}
+          deleteSpeed={90}
+          delaySpeed={1600}
+        />
+      </span>
+      <span className="text-2xl sm:text-3xl text-right">
+        <Typewriter
+          words={words.lineFour}
+          loop={true}
+          cursor={true}
+          cursorStyle="|"
+          typeSpeed={100}
+          deleteSpeed={80}
+          delaySpeed={1600}
+        />
+      </span>
     </div>
   );
 }
