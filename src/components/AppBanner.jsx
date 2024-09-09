@@ -29,6 +29,7 @@ function AppBanner() {
           loop={true}
           cursor={true}
           cursorStyle="|"
+          cursorColor={"#30d0d095"}
           typeSpeed={100}
           deleteSpeed={70}
           delaySpeed={1500}
@@ -40,6 +41,7 @@ function AppBanner() {
           loop={true}
           cursor={true}
           cursorStyle="|"
+          cursorColor={"#30d0d095"}
           typeSpeed={100}
           deleteSpeed={70}
           delaySpeed={1700}
@@ -51,6 +53,7 @@ function AppBanner() {
           loop={true}
           cursor={true}
           cursorStyle="|"
+          cursorColor={"#30d0d095"}
           typeSpeed={120}
           deleteSpeed={90}
           delaySpeed={1600}
@@ -62,6 +65,7 @@ function AppBanner() {
           loop={true}
           cursor={true}
           cursorStyle="|"
+          cursorColor={"#30d0d095"}
           typeSpeed={100}
           deleteSpeed={80}
           delaySpeed={1600}
